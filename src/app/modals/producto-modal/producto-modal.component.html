@@ -1,0 +1,46 @@
+<app-modal caption="Producto" [showButtons]="false">
+    <form id="formProducto" [formGroup]="formProducto" autocomplete="off">
+        <div class="form-body">
+            <div class="form-group"> 
+                <label class="control-label">Código</label><span> *</span>
+                <input formControlName="codp" class="form-control rounded" type="text"
+                    [ngClass]="{'invalid-field': isSubmitted && this.formProducto.controls.codp.invalid}">
+                <div *ngIf="isSubmitted && this.formProducto.controls.codp.errors">
+                    <div *ngIf="this.formProducto.controls.codp.errors.required" class="invalid-text">
+                        El campo es obligatorio
+                    </div>
+                    <div *ngIf="this.formProducto.controls.codp.errors.maxlength" class="invalid-text">
+                        El campo no debe contener más de 10 caracteres
+                    </div>
+                </div>
+
+                <label class="control-label">Descripción</label><span> *</span>
+                <input formControlName="desp" class="form-control rounded" type="text"
+                    [ngClass]="{'invalid-field': isSubmitted && this.formProducto.controls.desp.invalid}">
+                <div *ngIf="isSubmitted && this.formProducto.controls.desp.errors">
+                    <div *ngIf="this.formProducto.controls.desp.errors.required" class="invalid-text">
+                        El campo es obligatorio
+                    </div>
+                    <div *ngIf="this.formProducto.controls.desp.errors.maxlength" class="invalid-text">
+                        El campo no debe contener más de 40 caracteres
+                    </div> 
+                </div>
+
+                <label class="control-label">Valor del Producto</label><span> *</span>
+                <input formControlName="valp" class="form-control rounded" type="text"
+                    [ngClass]="{'invalid-field': isSubmitted && this.formProducto.controls.valp.invalid}">
+                <div *ngIf="isSubmitted && this.formProducto.controls.valp.errors">
+                    <div *ngIf="this.formProducto.controls.valp.errors.required" class="invalid-text">
+                        El campo es obligatorio
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="form-footer">
+        <button type="button" class="btn btn-danger" (click)="this.bsModalRef.hide()">Cerrar</button>
+        <button type="button" class="btn btn-primary" (click)="submit()">Aceptar</button>
+    </div>
+</app-modal>
+
+

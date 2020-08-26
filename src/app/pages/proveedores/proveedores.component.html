@@ -1,0 +1,23 @@
+<div class="container">
+    <button type="button" class="btn btn-link" (click)="openModal()">Crear Nuevo</button>
+    <table class="table table-striped table-dark container">
+        <thead>
+            <td> Identificacion</td>
+            <td> Nombre</td>
+            <td> Cupo</td>
+            <td> Acciones</td>
+        <tbody>
+            <tr *ngFor="let item of lst">
+                <td>{{item.idep }}</td>
+                <td>{{ item.nomp }}</td>
+                <td>{{ item.cupo | currency }}</td>
+                <td>
+                    <span (click)="openEditModal(item)"> Editar </span>
+                    <span (click)="delete(item)"> Eliminar </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

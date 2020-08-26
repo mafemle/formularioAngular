@@ -1,0 +1,29 @@
+.modal-dialog{
+    max-width: 100%;
+    margin: 0;
+}
+
+.modal-header{
+    background-color: #ffffff;
+    color: black;
+    border-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+.close{
+    color: black;
+}
+
+.close:hover{
+    opacity: 1;
+}
+
+.modal-title{
+    width: 95%;
+    text-align: center;
+}
+
+.modal-body{
+    overflow-y: auto;
+}
